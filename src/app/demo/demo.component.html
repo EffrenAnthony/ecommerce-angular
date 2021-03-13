@@ -1,0 +1,17 @@
+<nav>
+  <input type="text" [(ngModel)]='title'>
+  <div [ngSwitch]='title'>
+    <p *ngSwitchCase="'lufa'">este es lufa</p>
+    <p *ngSwitchCase="'bananero'">este es bananero</p>
+    <p *ngSwitchCase="'volador'">este es volador</p>
+    <p *ngSwitchDefault>no hay match</p>
+  </div>
+  {{title}}
+  <button (click)="addItem()">Add item</button>
+  <p *ngFor="let item of navbarItem">{{item}}</p>
+  <p *ngIf="isLoged">Carrito</p>
+  <h2>Precio: {{products.precio | currency: 'S/.'}}</h2>
+  <h2>Titulo: {{products.title | uppercase}}</h2>
+  <h4>FECHA:{{date | date: 'short'}}</h4>
+  <p>{{products.description | slice: 80: 90}}</p>
+</nav>
